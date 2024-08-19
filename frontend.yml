@@ -1,5 +1,5 @@
-- name: Frontend Playbook
+- name: Frontend playbook
   hosts: all
   become: true
   roles:
-    frontend
+    - frontend
