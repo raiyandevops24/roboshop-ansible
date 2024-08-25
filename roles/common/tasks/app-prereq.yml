@@ -4,16 +4,16 @@
 
 - name: Remove Old Content
   ansible.builtin.file:
-    path: "{{ app_path }}"
+    path: "{{app_path}}"
     state: absent
 
 - name: Create App Directory
   ansible.builtin.file:
-    path: "{{ app_path }}"
+    path: "{{app_path}}"
     state: directory
 
 - name: Extract & Download App Content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/${component}-v3.zip
-    dest: /tmp/${component}.zip
+    dest: /tmp/{{component}}.zip
     remote_src: yes
