@@ -17,17 +17,18 @@
 - name: Download NodeJS Dependencies
   ansible.builtin.shell: npm install
   args:
-    chdir: "{{ app_path}}"
+    chdir: "{{ app_path }}"
 
 - name: load Schema
-  ansible.builtin.include_rule:
+  ansible.builtin.include_role:
     name: common
     tasks_from: schema
 
 - name: Systemd Setup
-  ansible.builtin.include_rule:
+  ansible.builtin.include_role:
     name: common
     tasks_from: systemd
+
 
 
 
