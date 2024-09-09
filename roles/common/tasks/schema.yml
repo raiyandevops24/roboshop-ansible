@@ -9,5 +9,5 @@
     state: latest
 
 - name: Load Master Data
-  ansible.builtin.shell: mongosh --host 172.31.47.208 </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host mongo.dev.raiyan-m.online </app/db/master-data.js
   
