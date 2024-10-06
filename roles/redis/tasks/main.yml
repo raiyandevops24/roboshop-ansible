@@ -8,7 +8,6 @@
   ansible.builtin.dnf:
     name: redis
     state: latest
- 
 
 - name:  Update Redis Config File
   ansible.builtin.replace:
