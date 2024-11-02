@@ -1,6 +1,9 @@
-- name: Install Maven And Java
+- name: Install Python
   ansible.builtin.dnf:
-    name: maven
+    name:
+      - python3
+      - python3-devel
+      - gcc
     state: latest
 
 - name: Setup App Prequisites
@@ -9,7 +12,7 @@
     tasks_from: app-prereq.yml
 
 - name: Download Dependencies
-  ansible.builtin.shell: mvn clean package; mv target/{{ component }}-1.0.jar {{ component }}.jar
+  ansible.builtin.shell: pip3 install -r requirements.txt
   args:
     chdir: "{{ app_path}}"
 
